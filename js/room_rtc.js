@@ -1,4 +1,4 @@
-const APP_ID = "YOUR-APP-ID"
+const APP_ID = "9cb92e261f2f4443bee5de369c7f7615"
 
 let uid = sessionStorage.getItem('uid')
 if(!uid){
@@ -104,7 +104,7 @@ let handleUserPublished = async (user, mediaType) => {
 
         document.getElementById('streams__container').insertAdjacentHTML('beforeend', player)
         document.getElementById(`user-container-${user.uid}`).addEventListener('click', expandVideoFrame)
-   
+
     }
 
     if(displayFrame.style.display){
@@ -132,7 +132,7 @@ let handleUserLeft = async (user) => {
 
     if(userIdInDisplayFrame === `user-container-${user.uid}`){
         displayFrame.style.display = null
-        
+
         let videoFrames = document.getElementsByClassName('video__container')
 
         for(let i = 0; videoFrames.length > i; i++){
@@ -205,7 +205,7 @@ let toggleScreen = async (e) => {
 
 
     }else{
-        sharingScreen = false 
+        sharingScreen = false
         cameraButton.style.display = 'block'
         document.getElementById(`user-container-${uid}`).remove()
         await client.unpublish([localScreenTracks])
